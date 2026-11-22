@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dust — Privacy Policy</title>
+<meta name="description" content="Dust collects nothing: no network, no analytics, no account.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <img src="assets/icon.png" alt=""><strong>Dust</strong>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html" aria-current="page">Privacy</a>
+  </nav>
+</div></header>
+<main class="wrap">
+<h1 style="margin-top:48px">Privacy Policy</h1>
+<p class="muted" style="margin-top:-6px">Last updated 22 November 2026</p>
+
+<p class="lede" style="margin:18px 0 0">Dust collects nothing.</p>
+<p>That is the whole policy. Here is what it means concretely.</p>
+
+<h2>No network</h2>
+<p>Dust makes no network requests. There is no server, no analytics, no crash reporting, no
+update check, no account and no licence check &mdash; nothing for it to send anything to. You can
+confirm this with Little Snitch, LuLu or <code>nettop</code> and watch it make no connections
+at all.</p>
+
+<h2>What Dust reads</h2>
+<p>To tell you how much space you can reclaim, Dust reads file sizes and dates across your
+disk: caches, logs, build output, and any folders you add yourself in Settings. It reads
+<strong>metadata only</strong> &mdash; how large a file is and when it was last touched. It does
+not open files or read their contents.</p>
+<p>This is why Dust asks for Full Disk Access. macOS protects the folders where app caches
+live, and without that permission Dust reports a number that is too low. The permission is
+used for sizing and for removing what you choose, nothing else. Dust works without it and
+says plainly when the totals are incomplete.</p>
+
+<h2>What Dust writes</h2>
+<p>Two files, both inside <code>~/Library/Application Support/Dust/</code>:</p>
+<ul>
+  <li><code>snapshot.json</code> &mdash; the result of your last scan, so the panel opens
+  instantly instead of re-walking your disk.</li>
+  <li><code>settings.json</code> &mdash; your preferences: scan roots, protected paths, thresholds.</li>
+</ul>
+<p>Both stay on your Mac. Deleting that folder resets Dust completely.</p>
+
+<h2>What Dust deletes</h2>
+<p>Only what you click. Scanning never writes anything. Your documents, Desktop, Pictures,
+Movies, Music, iCloud&nbsp;Drive, Keychains, Mail, Messages and iOS device backups are excluded
+before Dust even builds its list of candidates, so they cannot be selected by accident.</p>
+<p>Anything recoverable goes to the Trash. Only regenerable caches are deleted outright, and
+anything that cannot be undone is called out before it happens.</p>
+
+<h2>Children</h2>
+<p>Dust is a disk utility with no accounts, no content and no communication features. It
+collects no data from anyone, of any age.</p>
+
+<h2>Changes</h2>
+<p>If this policy ever changes, the revision date above changes with it. Since Dust has no
+network access, a policy change cannot alter what a copy already installed on your Mac does.</p>
+
+<h2>Contact</h2>
+<p><a href="https://github.com/RaghavaNaidu46/Dust-app/issues">github.com/RaghavaNaidu46/Dust-app/issues</a></p>
+</main>
+<footer class="site"><div class="wrap">
+  <span>Dust for macOS</span>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/RaghavaNaidu46/Dust-app/issues">Contact</a>
+  </nav>
+</div></footer>
+</body>
+</html>

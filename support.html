@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dust — Support</title>
+<meta name="description" content="Help, FAQ and contact for Dust, the macOS disk-space app.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <img src="assets/icon.png" alt=""><strong>Dust</strong>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="support.html" aria-current="page">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</div></header>
+<main class="wrap">
+<h1 style="margin-top:48px">Support</h1>
+<p class="lede" style="margin:0 0 8px">Questions, bug reports and feature requests all go to one place.</p>
+<p><a href="https://github.com/RaghavaNaidu46/Dust-app/issues">Open an issue on GitHub</a> &mdash;
+it is read by a person, and you do not need an account to read what is already there.</p>
+
+<div class="note"><p><strong>Found something Dust offered to delete that it should not have?</strong>
+Please report it with the path. Dust is built so that cannot happen, and a case where it did
+is the most important bug it can have.</p></div>
+
+<h2>Common questions</h2>
+
+<details><summary>Why does Dust need Full Disk Access?</summary>
+<p>App caches live inside folders macOS protects &mdash; containers, and parts of
+<code>~/Library</code>. Without the permission Dust can still scan, but the totals come out
+low. It will say so plainly rather than quietly under-reporting.</p>
+<p>Dust reads only metadata: how large a file is and when it was last touched. It does not
+open files or read their contents.</p>
+</details>
+
+<details><summary>How do I grant it?</summary>
+<p>System Settings &rarr; Privacy &amp; Security &rarr; Full Disk Access, then switch on Dust.
+The welcome screen has a button that takes you straight there, and it notices when the
+permission lands. You can reopen that screen any time from Settings &rarr; General.</p>
+</details>
+
+<details><summary>Is it safe to click &ldquo;Free up all safe&rdquo;?</summary>
+<p>That button only touches items Dust classes as both disposable and actionable. Your
+documents, Desktop, Pictures, Movies, Music, iCloud&nbsp;Drive, Keychains, Mail, Messages and
+iOS device backups are excluded during discovery, so they never become candidates at all.</p>
+<p>Anything reversible is moved to the Trash. Leftovers from uninstalled apps, old downloads
+and working simulators are never included &mdash; those come through a review sheet where every
+box starts unticked.</p>
+</details>
+
+<details><summary>What exactly gets deleted?</summary>
+<p>Expand any row in the panel to see the individual folders, their sizes and when each was
+last used. Right-click a row and choose <em>Choose items&hellip;</em> to pick them one at a time
+instead of freeing the whole group.</p>
+</details>
+
+<details><summary>Dust says some space &ldquo;reclaims after restart&rdquo;. Why can&rsquo;t it free that now?</summary>
+<p>Deregistered simulator runtimes can leave multi-gigabyte files under System Integrity
+Protection. Deleting them fails even for an administrator; macOS releases them itself on the
+next restart. Dust shows them separately and will not ask you for a password that cannot help.</p>
+</details>
+
+<details><summary>Why is some space listed as &ldquo;needs an administrator&rdquo;?</summary>
+<p>Parts of <code>/Library</code> are owned by the system. Dust shows their size for information
+and leaves them alone rather than escalating privileges to delete system files.</p>
+</details>
+
+<details><summary>Does Dust scan in the background or slow my Mac down?</summary>
+<p>No. There is no background scanning, no timer and no filesystem watcher. A scan runs when
+you open the panel and is cancelled when you close it. An optional periodic rescan exists in
+Settings, is off by default, and is skipped on battery, in Low Power Mode and when the Mac is
+running hot.</p>
+</details>
+
+<details><summary>Does it send anything anywhere?</summary>
+<p>No. Dust makes no network requests at all &mdash; no analytics, no crash reporting, no update
+check, no account. See the <a href="privacy.html">privacy policy</a>.</p>
+</details>
+
+<details><summary>Will it scan my source code folders?</summary>
+<p>Only the ones you add. Settings &rarr; Scanning takes project roots, and nothing inside a
+source tree is walked until you add one. Matching is by exact directory name
+(<code>node_modules</code>, <code>build</code>, <code>Pods</code>, <code>.build</code>); names
+that are checked in by some projects, like <code>dist</code> or <code>vendor</code>, are
+opt-in on top of that.</p>
+</details>
+
+<details><summary>How do I protect a folder from Dust entirely?</summary>
+<p>Settings &rarr; Protected. Anything listed there is excluded while Dust is still building its
+list, so it never appears as a candidate in the first place.</p>
+</details>
+
+<details><summary>How do I uninstall it?</summary>
+<p>Quit Dust from the menubar, move the app to the Trash, and delete
+<code>~/Library/Application Support/Dust</code>. That folder holds only the cached scan result
+and your settings.</p>
+</details>
+
+<h2>Requirements</h2>
+<p class="muted">macOS 14 Sonoma or later. Apple silicon and Intel.</p>
+</main>
+<footer class="site"><div class="wrap">
+  <span>Dust for macOS</span>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/RaghavaNaidu46/Dust-app/issues">Contact</a>
+  </nav>
+</div></footer>
+</body>
+</html>

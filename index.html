@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dust — reclaim the space macOS hides</title>
+<meta name="description" content="A macOS menubar app that shows what is actually inside System Data, and frees it safely.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site"><div class="wrap">
+  <img src="assets/icon.png" alt=""><strong>Dust</strong>
+  <nav>
+    <a href="index.html" aria-current="page">Overview</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+  </nav>
+</div></header>
+<main class="wrap">
+<section class="hero">
+  <img class="app" src="assets/icon.png" alt="Dust app icon">
+  <h1>Reclaim the space macOS hides</h1>
+  <p class="lede">macOS tells you that 235&nbsp;GB is &ldquo;System Data&rdquo; and stops there.
+  Dust tells you what it actually is &mdash; then frees what you choose.</p>
+</section>
+
+<img class="shot" src="assets/panel.png" alt="The Dust panel listing reclaimable space grouped by app">
+
+<h2>What it finds</h2>
+<div class="grid">
+  <div class="card"><h3>Every installed app</h3><p>Caches, containers, HTTP storage and saved state, found through the locations macOS gives every app. No hardcoded list.</p></div>
+  <div class="card"><h3>Browser engine caches</h3><p>The Chromium and Electron sub-caches where editors, browsers and chat apps quietly keep gigabytes.</p></div>
+  <div class="card"><h3>Xcode and simulators</h3><p>DerivedData per project, device support per OS version, archives, and runtimes you have already superseded.</p></div>
+  <div class="card"><h3>Package managers</h3><p>SwiftPM, CocoaPods, Homebrew, npm, Yarn, pnpm, pip, uv, Gradle, Maven, Go, Cargo and more.</p></div>
+  <div class="card"><h3>Your own build output</h3><p><code>node_modules</code>, <code>build</code>, <code>Pods</code>, <code>.build</code> &mdash; but only inside folders you add yourself.</p></div>
+  <div class="card"><h3>Leftovers</h3><p>Data belonging to apps that are no longer installed, the Trash, and downloads you have not touched in months.</p></div>
+</div>
+
+<h2>What it will not do</h2>
+<p>Dust is built so that you can click <em>Free</em> without reading the fine print first.</p>
+<ul>
+  <li><strong>Scanning never writes.</strong> Nothing is removed until you ask.</li>
+  <li><strong>Your documents are not candidates.</strong> Documents, Desktop, Pictures, Movies, Music, iCloud&nbsp;Drive, Mail, Messages and iOS device backups are excluded while Dust is still looking &mdash; they cannot be selected by accident.</li>
+  <li><strong>Nothing is guessed.</strong> Caches are matched by exact folder name, never inferred from what a folder contains.</li>
+  <li><strong>Reversible things go to the Trash.</strong> Only regenerable caches are deleted outright, because trashing twenty gigabytes of cache just moves the problem.</li>
+  <li><strong>Nothing goes in bulk.</strong> Leftovers, old downloads and working simulators come through a review sheet with every box unticked.</li>
+  <li><strong>The number is real.</strong> &ldquo;Freed 12.4&nbsp;GB&rdquo; is the volume measured before and after, not the sum of estimates. Anything that could not be removed is listed with the reason.</li>
+</ul>
+
+<h2>It stays out of the way</h2>
+<p>No background scanning, no timers, no filesystem watchers. A scan runs when you open the
+panel and stops when you close it. No network, no telemetry, no account &mdash; nothing leaves
+your Mac. See the <a href="privacy.html">privacy policy</a>.</p>
+
+<h2>Requirements</h2>
+<p class="muted">macOS 14 Sonoma or later. Apple silicon and Intel.</p>
+</main>
+<footer class="site"><div class="wrap">
+  <span>Dust for macOS</span>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://github.com/RaghavaNaidu46/Dust-app/issues">Contact</a>
+  </nav>
+</div></footer>
+</body>
+</html>
